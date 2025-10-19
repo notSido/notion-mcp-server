@@ -1,17 +1,31 @@
-# Notion MCP Server
+# Notion MCP Server (2025-09-03 Fork)
 
-> [!NOTE] 
-> 
-> We’ve introduced **Notion MCP**, a remote MCP server with the following improvements:
+> [!IMPORTANT]
+> **This is a community fork** that updates the MCP server to use Notion API version **2025-09-03**.
+>
+> Notion released API version 2025-09-03 in late August 2024, introducing breaking changes including multi-source database support. Despite maintaining an open-source MCP server, Notion has **not updated their own repository** to support the new API version, leaving the community to fend for themselves.
+>
+> This fork exists because Notion couldn't be bothered to update their own open-source project to work with their own API changes. Make of that what you will.
+
+> [!NOTE]
+>
+> Notion has also introduced **Notion MCP**, a remote MCP server with the following improvements:
 > - Easy installation via standard OAuth. No need to fiddle with JSON or API token anymore.
 > - Powerful tools tailored to AI agents. These tools are designed with optimized token consumption in mind.
-> 
+>
 > Learn more and try it out [here](https://developers.notion.com/docs/mcp)
 
 
 ![notion-mcp-sm](https://github.com/user-attachments/assets/6c07003c-8455-4636-b298-d60ffdf46cd8)
 
-This project implements an [MCP server](https://spec.modelcontextprotocol.io/) for the [Notion API](https://developers.notion.com/reference/intro). 
+This project implements an [MCP server](https://spec.modelcontextprotocol.io/) for the [Notion API](https://developers.notion.com/reference/intro).
+
+## What's Different in This Fork
+
+- ✅ **Updated to API version 2025-09-03** (released August 2024)
+- ✅ **Supports multi-source databases** and other new API features
+- ✅ **Maintains compatibility** with the latest Notion API changes
+- ✅ **Community-maintained** because apparently that's necessary 
 
 ![mcp-demo](https://github.com/user-attachments/assets/e3ff90a7-7801-48a9-b807-f7dd47f0d3d6)
 
@@ -71,7 +85,7 @@ Add the following to your `.cursor/mcp.json` or `claude_desktop_config.json` (Ma
       "command": "npx",
       "args": ["-y", "@notionhq/notion-mcp-server"],
       "env": {
-        "OPENAPI_MCP_HEADERS": "{\"Authorization\": \"Bearer ntn_****\", \"Notion-Version\": \"2022-06-28\" }"
+        "OPENAPI_MCP_HEADERS": "{\"Authorization\": \"Bearer ntn_****\", \"Notion-Version\": \"2025-09-03\" }"
       }
     }
   }
@@ -90,7 +104,7 @@ Add the following to your `settings.json`
         "path": "npx",
         "args": ["-y", "@notionhq/notion-mcp-server"],
         "env": {
-          "OPENAPI_MCP_HEADERS": "{\"Authorization\": \"Bearer ntn_****\", \"Notion-Version\": \"2022-06-28\" }"
+          "OPENAPI_MCP_HEADERS": "{\"Authorization\": \"Bearer ntn_****\", \"Notion-Version\": \"2025-09-03\" }"
         }
       },
       "settings": {}
@@ -142,7 +156,7 @@ Add the following to your `.cursor/mcp.json` or `claude_desktop_config.json`:
         "mcp/notion"
       ],
       "env": {
-        "OPENAPI_MCP_HEADERS": "{\"Authorization\":\"Bearer ntn_****\",\"Notion-Version\":\"2022-06-28\"}"
+        "OPENAPI_MCP_HEADERS": "{\"Authorization\":\"Bearer ntn_****\",\"Notion-Version\":\"2025-09-03\"}"
       }
     }
   }
@@ -194,7 +208,7 @@ Then, add the following to your `.cursor/mcp.json` or `claude_desktop_config.jso
         "--rm",
         "-i",
         "-e",
-        "OPENAPI_MCP_HEADERS={\"Authorization\": \"Bearer ntn_****\", \"Notion-Version\": \"2022-06-28\"}",
+        "OPENAPI_MCP_HEADERS={\"Authorization\": \"Bearer ntn_****\", \"Notion-Version\": \"2025-09-03\"}",
         "notion-mcp-server"
       ]
     }

@@ -89,11 +89,16 @@ export class MCPProxy {
         const response = await this.httpClient.executeOperation(operation, params)
 
         // Convert response to MCP format
+        // Ensure we always return non-empty text content for Claude API compatibility
+        const responseText = response.data !== undefined && response.data !== null
+          ? JSON.stringify(response.data)
+          : JSON.stringify({ message: 'Success', status: response.status })
+
         return {
           content: [
             {
               type: 'text', // currently this is the only type that seems to be used by mcp server
-              text: JSON.stringify(response.data), // TODO: pass through the http status code text?
+              text: responseText || '{}', // Fallback to empty object if somehow still empty
             },
           ],
         }
@@ -147,7 +152,7 @@ export class MCPProxy {
     if (notionToken) {
       return {
         'Authorization': `Bearer ${notionToken}`,
-        'Notion-Version': '2022-06-28'
+        'Notion-Version': '2025-09-03'
       }
     }
 
