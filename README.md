@@ -3,7 +3,7 @@
 > [!IMPORTANT]
 > **This is a community fork** that updates the MCP server to use Notion API version **2025-09-03**.
 >
-> Notion released API version 2025-09-03 in late August 2024, introducing breaking changes including multi-source database support. Despite maintaining an open-source MCP server, Notion has **not updated their own repository** to support the new API version, leaving the community to fend for themselves.
+> Notion released API version 2025-09-03 in late August 2025, introducing breaking changes including multi-source database support. Despite maintaining an open-source MCP server, Notion has **not updated their own repository** to support the new API version, leaving the community to fend for themselves.
 >
 > This fork exists because Notion couldn't be bothered to update their own open-source project to work with their own API changes. Make of that what you will.
 
