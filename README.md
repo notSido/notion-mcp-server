@@ -22,7 +22,7 @@ This project implements an [MCP server](https://spec.modelcontextprotocol.io/) f
 
 ## What's Different in This Fork
 
-- ✅ **Updated to API version 2025-09-03** (released August 2024)
+- ✅ **Updated to API version 2025-09-03** (released August 2025)
 - ✅ **Supports multi-source databases** and other new API features
 - ✅ **Maintains compatibility** with the latest Notion API changes
 - ✅ **Community-maintained** because apparently that's necessary 
